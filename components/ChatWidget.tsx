@@ -59,8 +59,8 @@ export default function ChatWidget() {
         style={{ boxShadow: "0 4px 16px rgba(0,0,0,0.18)" }}
       >
         {/* Cute little circle head */}
-        <span className="relative block h-12 w-12 rounded-full bg-white border border-black overflow-hidden flex items-center justify-center">
-          <img src="/images/julia.png" alt="Julia avatar" className="object-cover w-full h-full" />
+        <span className="relative block w-14 h-14 rounded-full bg-white overflow-hidden flex items-center justify-center">
+          <img src="/images/avatar.png" alt="Chat avatar" className="object-cover w-full h-full rounded-full" />
         </span>
       </button>
       {/* Chat window */}
@@ -68,17 +68,20 @@ export default function ChatWidget() {
         <div className="fixed bottom-24 right-6 z-50 w-80 max-w-xs max-h-[70vh] rounded-2xl bg-white shadow-2xl border border-black flex flex-col overflow-hidden animate-fade-in font-sans">
           <div className="p-4 border-b border-black bg-white flex items-center justify-between">
             <span className="flex items-center gap-2">
-              <span className="relative block h-8 w-8 rounded-full bg-white border border-black overflow-hidden flex items-center justify-center">
-                <img src="/images/julia.png" alt="Julia avatar" className="object-cover w-full h-full" />
+              <span className="relative block w-12 h-12 rounded-full bg-white overflow-hidden flex items-center justify-center">
+                <img src="/images/avatar.png" alt="Chat avatar" className="object-cover w-full h-full rounded-full" />
               </span>
               <span className="font-serif text-lg font-bold text-black tracking-tight">Julia</span>
             </span>
             <button
               aria-label="Close chat"
-              className="text-black hover:text-zinc-700 text-2xl font-bold"
+              className="text-black hover:text-zinc-700 p-1 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-400 transition"
               onClick={() => setOpen(false)}
             >
-              ×
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="12" fill="#fff"/>
+                <path d="M8 8L16 16M16 8L8 16" stroke="#111" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
             </button>
           </div>
           <div className="flex-1 p-4 overflow-y-auto space-y-3 text-base">
