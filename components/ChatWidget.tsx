@@ -60,7 +60,7 @@ export default function ChatWidget() {
       >
         {/* Cute little circle head */}
         <span className="relative block w-14 h-14 rounded-full bg-white overflow-hidden flex items-center justify-center">
-          <img src="/images/avatar.png" alt="Chat avatar" className="object-cover w-full h-full rounded-full" />
+          <img src="/images/aiavatar.png" alt="Chat avatar" className="object-cover w-full h-full rounded-full" />
         </span>
       </button>
       {/* Chat window */}
@@ -69,7 +69,7 @@ export default function ChatWidget() {
           <div className="p-4 border-b border-black bg-white flex items-center justify-between">
             <span className="flex items-center gap-2">
               <span className="relative block w-12 h-12 rounded-full bg-white overflow-hidden flex items-center justify-center">
-                <img src="/images/avatar.png" alt="Chat avatar" className="object-cover w-full h-full rounded-full" />
+                <img src="/images/aiavatar.png" alt="Chat avatar" className="object-cover w-full h-full rounded-full" />
               </span>
               <span className="font-serif text-lg font-bold text-black tracking-tight">Julia</span>
             </span>
