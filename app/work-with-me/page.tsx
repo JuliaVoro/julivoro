@@ -37,8 +37,8 @@ export default function WorkWithMe() {
     <section className="pb-24 pt-40">
       <div className="container max-w-3xl">
         <h1 className="title mb-12">Work With Me</h1>
-        <p className="mb-6 text-xl font-light text-muted-foreground">Practical, creative, and hands-on support for your business, team, or startup.</p>
-        <p className="mb-12 text-lg text-muted-foreground">Explore ways we can collaborate, based on my expertise in service design, AI, and business innovation. Choose an offer that fits your needs or <Link href="/contact" className="underline">contact me</Link> for something custom.</p>
+        <p className="mb-4 text-lg text-muted-foreground">Practical, creative, and hands-on support for your business, team, or startup.</p>
+        <p className="mb-10 text-base text-muted-foreground">Explore ways we can collaborate, based on my expertise in service design, AI, and business innovation. Choose an offer that fits your needs or <Link href="/contact" className="underline">contact me</Link> for something custom.</p>
         <ul className="grid gap-8 sm:grid-cols-2">
           {offers.map((offer) => (
             <li key={offer.title} className="group flex flex-col h-full rounded-xl border border-zinc-200 dark:border-zinc-700 bg-white/80 dark:bg-zinc-900/80 p-6 shadow-sm hover:bg-white hover:dark:bg-zinc-900 hover:shadow-lg transition-all">
