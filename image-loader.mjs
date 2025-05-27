@@ -1,6 +1,6 @@
-const config = require('./config');
+import config from './config.js';
 
-module.exports = function customLoader({ src, width, quality }) {
+export default function customLoader({ src, width, quality }) {
   // If the image is from an external source, return it as is
   if (src.startsWith('http') || src.startsWith('https') || src.startsWith('data:')) {
     return src;
@@ -9,4 +9,4 @@ module.exports = function customLoader({ src, width, quality }) {
   // For local images, prepend the base URL if in production
   const baseUrl = config.isProd ? config.baseUrl : '';
   return `${baseUrl}${src}`;
-};
+}

@@ -38,17 +38,13 @@ export default async function Post({ params }: { params: { slug: string } }) {
         </Link>
 
         {image && (
-          <div className='mb-6 w-full'>
-            <div className='relative mx-auto max-w-3xl'>
-              <Image
-                src={image}
-                alt={title || ''}
-                width={1200}
-                height={630}
-                className='rounded-lg object-contain'
-                priority
-              />
-            </div>
+          <div className='relative mb-6 h-96 w-full overflow-hidden rounded-lg'>
+            <Image
+              src={image}
+              alt={title || ''}
+              className='object-cover'
+              fill
+            />
           </div>
         )}
 
