@@ -7,8 +7,26 @@ const nextConfig = {
   
   // Image optimization
   images: {
-    unoptimized: true, // Disable Image Optimization API for static exports
-    domains: ['images.unsplash.com'], // Add any external image domains here
+    // Enable image optimization
+    unoptimized: false,
+    // Add any external image domains here
+    domains: ['images.unsplash.com'],
+    // Configure image formats
+    formats: ['image/avif', 'image/webp'],
+    // Configure device sizes for responsive images
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    // Configure image sizes for responsive images
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    // Configure the image path in the public folder
+    path: '/_next/image',
+    // Configure the image loader
+    loader: 'default',
+    // Configure the image quality
+    quality: 75,
+    // Configure the image placeholder
+    placeholder: 'blur',
+    // Configure the image blur data URL
+    blurDataURL: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
   },
   
   // Enable trailing slashes for better compatibility
@@ -33,6 +51,17 @@ const nextConfig = {
         fs: false,
       };
     }
+    
+    // Handle static files
+    config.module.rules.push({
+      test: /\.(png|jpe?g|gif|webp|svg)$/i,
+      type: 'asset/resource',
+      generator: {
+        filename: 'static/media/[name].[hash][ext]',
+        publicPath: '/_next/',
+      },
+    });
+    
     return config;
   },
 };
