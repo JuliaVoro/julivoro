@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
+import Head from 'next/head';
 
 import { cn } from '@/lib/utils'
+import config from '@/../config';
 
 import './globals.css'
 import Providers from '@/components/providers'
@@ -39,6 +41,7 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning>
       <head>
+        <base href={`${config.baseUrl}/`} />
         <link
           rel='preconnect'
           href='https://fonts.gstatic.com'
