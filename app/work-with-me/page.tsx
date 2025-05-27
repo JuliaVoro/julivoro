@@ -11,7 +11,7 @@ const offers = [
     title: 'Service Design for Small Businesses',
     description:
       'Practical ways for cafes, salons, and shops to use service design and digital tools to improve customer experience and operations. Includes workflow audits, digital tool recommendations, and customer journey mapping.',
-    href: '/projects/service-design-small-business',
+    href: '/posts/small-business-service-design',
     icon: (
       <RocketIcon
         className='h-7 w-7 text-primary'
@@ -25,7 +25,7 @@ const offers = [
     title: 'Integrating AI into the UX & UI Process',
     description:
       'How startups can leverage AI to accelerate design, improve user experience, and streamline UI/UX workflows. Get hands-on with the latest AI tools and best practices.',
-    href: '/projects/next-mdx-portfolio',
+    href: '/posts/generative-ai-roadmap',
     icon: (
       <MagicWandIcon
         className='h-7 w-7 text-primary'
