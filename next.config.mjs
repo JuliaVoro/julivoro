@@ -3,10 +3,7 @@ const nextConfig = {
   // Enable React Strict Mode
   reactStrictMode: true,
   
-  // Enable server components
-  experimental: {
-    serverActions: true,
-  },
+  // Server Actions are enabled by default in Next.js 14+
   
   // Image optimization
   images: {
