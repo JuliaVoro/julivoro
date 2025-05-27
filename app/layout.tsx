@@ -79,6 +79,7 @@ export default function RootLayout({
       data-oid='47rlmgs'
     >
       <body
+        suppressHydrationWarning
         className={cn(
           'flex min-h-screen flex-col font-sans antialiased',
           inter.variable,
