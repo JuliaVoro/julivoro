@@ -6,13 +6,13 @@ const offers = [
     title: 'Integrating GenUI into Your Design Process',
     description:
       'Accelerate innovation by embedding generative UI tools and AI-driven workflows into your product or service design.',
-    image: '/images/posts/introduction-to-nextjs.webp'
+    image: '/images/posts/genui2.png'
   },
   {
     title: 'Business Idea Validation Workshop',
     description:
       'Test and refine your business concept with expert guidance, user research, and actionable feedback.',
-    image: '/images/posts/introduction-to-mdx.webp'
+    image: '/images/posts/servicedesign.png'
   },
   {
     title: 'Individual Mentoring Session',
