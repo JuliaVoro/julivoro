@@ -18,6 +18,12 @@ export default async function RecentPosts() {
           </Link>
         </div>
         <Posts posts={posts} />
+        <Link
+          href='/posts'
+          className='mt-8 inline-block text-sm font-medium text-muted-foreground underline-offset-4 hover:underline'
+        >
+          View all thoughts
+        </Link>
       </div>
     </section>
   )
