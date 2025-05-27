@@ -1,14 +1,13 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production';
-const repoName = 'landingjulia';
+const isVercel = process.env.VERCEL === '1';
 
 const nextConfig = {
   // Disable static exports for Vercel deployment
-  // output: 'export',
+  output: isVercel ? undefined : 'export',
   
-  // Configure base path for GitHub Pages
-  basePath: isProd ? `/${repoName}` : '',
-  assetPrefix: isProd ? `/${repoName}/` : '',
+  // Remove basePath and assetPrefix for Vercel
+  basePath: '',
+  assetPrefix: '',
   
   // Image optimization
   images: {
@@ -17,13 +16,15 @@ const nextConfig = {
   
   // Environment variables
   env: {
-    NEXT_PUBLIC_BASE_PATH: isProd ? `/${repoName}` : '',
+    NEXT_PUBLIC_BASE_URL: isVercel 
+      ? 'https://landingjulia-4izii24u2-juliavoros-projects.vercel.app' 
+      : 'http://localhost:3000',
   },
   
   // React Strict Mode
   reactStrictMode: true,
   
-  // Enable webpack configuration for static exports
+  // Enable webpack configuration
   webpack: (config, { isServer }) => {
     // Fixes npm packages that depend on `fs` module
     if (!isServer) {
@@ -34,6 +35,9 @@ const nextConfig = {
     }
     return config;
   },
+  
+  // Enable trailing slashes for static exports
+  trailingSlash: true,
 };
 
 export default nextConfig;
