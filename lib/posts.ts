@@ -49,27 +49,6 @@ export async function getPosts(limit?: number): Promise<PostMetadata[]> {
   return posts
 }
 
-export async function getPostsBySlugs(slugs: string[]): Promise<PostMetadata[]> {
-  const allPosts = await getPosts()
-  return allPosts.filter(post => slugs.includes(post.slug))
-}
-
-export async function getFeaturedPosts(): Promise<PostMetadata[]> {
-  // Always include 'introduction-to-mdx' (Beyond the MVP) and get the 2 most recent others
-  const allPosts = await getPosts()
-  const featuredSlugs = new Set(['introduction-to-mdx'])
-  
-  // Add the most recent posts that aren't the featured one
-  for (const post of allPosts) {
-    if (featuredSlugs.size >= 3) break
-    if (!featuredSlugs.has(post.slug)) {
-      featuredSlugs.add(post.slug)
-    }
-  }
-  
-  return getPostsBySlugs(Array.from(featuredSlugs))
-}
-
 export function getPostMetadata(filepath: string): PostMetadata {
   const slug = filepath.replace(/\.mdx$/, '')
   const filePath = path.join(rootDirectory, filepath)
