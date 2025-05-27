@@ -28,15 +28,17 @@ export const metadata: Metadata = {
     default: 'Julia Vorobiova | Service Design & Strategy',
     template: '%s | Julia Vorobiova'
   },
-  description: 'Service design strategist helping businesses create meaningful digital experiences',
+  description:
+    'Service design strategist helping businesses create meaningful digital experiences',
   metadataBase: new URL('https://juliavorobiova.com'),
   openGraph: {
     title: 'Julia Vorobiova | Service Design & Strategy',
-    description: 'Service design strategist helping businesses create meaningful digital experiences',
+    description:
+      'Service design strategist helping businesses create meaningful digital experiences',
     url: 'https://juliavorobiova.com',
     siteName: 'Julia Vorobiova',
     locale: 'en_US',
-    type: 'website',
+    type: 'website'
   },
   robots: {
     index: true,
@@ -46,45 +48,51 @@ export const metadata: Metadata = {
       follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+      'max-snippet': -1
+    }
   },
   twitter: {
     title: 'Julia Vorobiova',
-    card: 'summary_large_image',
+    card: 'summary_large_image'
   },
   verification: {
     // Add your verification tokens here
-  },
+  }
 }
 
 // Viewport configuration
 export const viewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#000000' },
-  ],
+    { media: '(prefers-color-scheme: dark)', color: '#000000' }
+  ]
 }
 
 export default function RootLayout({
   children
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang='en' suppressHydrationWarning className='scroll-smooth'>
+    <html
+      lang='en'
+      suppressHydrationWarning
+      className='scroll-smooth'
+      data-oid='47rlmgs'
+    >
       <body
         className={cn(
           'flex min-h-screen flex-col font-sans antialiased',
           inter.variable,
           playfair.variable
         )}
+        data-oid='b8:xm08'
       >
-        <Providers>
-          <Header />
-          <main className='grow'>{children}</main>
-          <Footer />
-          <ChatWidget />
+        <Providers data-oid='ooksti9'>
+          <Header data-oid='4lv:m2h' />
+          <main className='grow' data-oid='7cu4bl1'>
+            {children}
+          </main>
+          <Footer data-oid='3bwdm._' />
+          <ChatWidget data-oid='h9m7kwt' />
         </Providers>
       </body>
     </html>

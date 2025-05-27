@@ -30,36 +30,43 @@ export default async function Project({
   const { title, image, author, publishedAt } = metadata
 
   return (
-    <section className='pb-24 pt-32'>
-      <div className='container max-w-3xl'>
+    <section className='pb-24 pt-32' data-oid='.r7j3cd'>
+      <div className='container max-w-3xl' data-oid='h5a9h-1'>
         <Link
           href='/'
           className='mb-8 inline-flex items-center gap-2 text-sm font-light text-muted-foreground transition-colors hover:text-foreground'
+          data-oid='hugvvir'
         >
-          <ArrowLeftIcon className='h-5 w-5' />
-          <span>Back</span>
+          <ArrowLeftIcon className='h-5 w-5' data-oid='0tpi9.6' />
+          <span data-oid='6gaa.-7'>Back</span>
         </Link>
 
         {image && (
-          <div className='relative mb-6 h-96 w-full overflow-hidden rounded-lg'>
+          <div
+            className='relative mb-6 h-96 w-full overflow-hidden rounded-lg'
+            data-oid='0_ti2fx'
+          >
             <Image
               src={image}
               alt={title || ''}
               className='object-cover'
               fill
+              data-oid='gqh1uw6'
             />
           </div>
         )}
 
-        <header>
-          <h1 className='title'>{title}</h1>
-          <p className='mt-3 text-xs text-muted-foreground'>
+        <header data-oid='f47.soj'>
+          <h1 className='title' data-oid='6.2hcig'>
+            {title}
+          </h1>
+          <p className='mt-3 text-xs text-muted-foreground' data-oid='3q3388c'>
             {author} / {formatDate(publishedAt ?? '')}
           </p>
         </header>
 
-        <main className='prose mt-16 dark:prose-invert'>
-          <MDXContent source={content} />
+        <main className='prose mt-16 dark:prose-invert' data-oid='3l51:rm'>
+          <MDXContent source={content} data-oid='6471r1t' />
         </main>
       </div>
     </section>

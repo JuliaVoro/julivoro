@@ -3,36 +3,18 @@ const nextConfig = {
   // Enable React Strict Mode
   reactStrictMode: true,
   
-  // Server Actions are enabled by default in Next.js 14+
-  
   // Image optimization
   images: {
-    // Enable image optimization
-    unoptimized: false,
+    // Disable image optimization for static export
+    unoptimized: true,
     // Add any external image domains here
-    domains: ['images.unsplash.com'],
-    // Configure image formats
-    formats: ['image/avif', 'image/webp'],
-    // Configure device sizes for responsive images
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    // Configure image sizes for responsive images
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    // Configure the image path in the public folder
-    path: '/_next/image',
-    // Configure the image loader
-    loader: 'default',
-    // Configure the image quality
-    quality: 75,
-    // Configure the image placeholder
-    placeholder: 'blur',
-    // Configure the image blur data URL
-    blurDataURL: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
+    domains: ['images.unsplash.com']
   },
   
   // Enable trailing slashes for better compatibility
   trailingSlash: true,
   
-  // Disable static exports for Vercel
+  // Output standalone for Vercel
   output: 'standalone',
   
   // Environment variables
@@ -57,8 +39,7 @@ const nextConfig = {
       test: /\.(png|jpe?g|gif|webp|svg)$/i,
       type: 'asset/resource',
       generator: {
-        filename: 'static/media/[name].[hash][ext]',
-        publicPath: '/_next/',
+        filename: 'static/media/[name][ext]',
       },
     });
     

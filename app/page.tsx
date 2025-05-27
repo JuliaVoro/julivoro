@@ -6,14 +6,14 @@ import Collaborate from '@/components/collaborate'
 
 export default function Home() {
   return (
-    <section className='pb-24 pt-40'>
-      <div className='container max-w-3xl'>
-        <Intro />
+    <section className='pb-24 pt-40' data-oid='6ldbsw:'>
+      <div className='container max-w-3xl' data-oid='1z9of6o'>
+        <Intro data-oid='3tnfq13' />
 
-        <RecentPosts />
-        <RecentProjects />
+        <RecentPosts data-oid='w0948u7' />
+        <RecentProjects data-oid='5i6l0n4' />
 
-        <NewsletterForm />
+        <NewsletterForm data-oid='7ll6666' />
       </div>
     </section>
   )

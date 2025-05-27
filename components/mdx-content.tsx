@@ -6,7 +6,13 @@ import Counter from '@/components/counter'
 
 function Code({ children, ...props }: any) {
   let codeHTML = highlight(children)
-  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
+  return (
+    <code
+      dangerouslySetInnerHTML={{ __html: codeHTML }}
+      {...props}
+      data-oid='azl768a'
+    />
+  )
 }
 
 const components = {
@@ -21,6 +27,7 @@ export default function MDXContent(
     <MDXRemote
       {...props}
       components={{ ...components, ...(props.components || {}) }}
+      data-oid='rx72suh'
     />
   )
 }

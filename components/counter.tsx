@@ -10,13 +10,13 @@ export default function Counter() {
   const decrement = () => setCount(count - 1)
 
   return (
-    <div className='flex items-center gap-3'>
-      <Button size='icon' onClick={decrement}>
-        <MinusIcon />
+    <div className='flex items-center gap-3' data-oid='4n2vrl3'>
+      <Button size='icon' onClick={decrement} data-oid='yk_:ek7'>
+        <MinusIcon data-oid='xllp625' />
       </Button>
-      <p>Current vote: {count}</p>
-      <Button size='icon' onClick={increment}>
-        <PlusIcon />
+      <p data-oid='mikto34'>Current vote: {count}</p>
+      <Button size='icon' onClick={increment} data-oid='deyc5lo'>
+        <PlusIcon data-oid='i7fzcyb' />
       </Button>
     </div>
   )

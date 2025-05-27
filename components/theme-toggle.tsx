@@ -25,14 +25,17 @@ export function ThemeToggle() {
       onClick={() => {
         setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
       }}
+      data-oid='5zwzin2'
     >
       {resolvedTheme === 'dark' ? (
-        <SunIcon className='size-4 text-orange-300' />
+        <SunIcon className='size-4 text-orange-300' data-oid='7kjazfm' />
       ) : (
-        <MoonIcon className='size-4 text-sky-950' />
+        <MoonIcon className='size-4 text-sky-950' data-oid='8m7_edg' />
       )}
 
-      <span className='sr-only'>Toggle theme</span>
+      <span className='sr-only' data-oid='46e8-4.'>
+        Toggle theme
+      </span>
     </Button>
   )
 }

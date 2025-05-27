@@ -40,12 +40,17 @@ export default function NewsletterForm() {
   }
 
   return (
-    <section>
-      <Card className='rounded-lg border-0 dark:border'>
-        <CardContent className='flex flex-col gap-8 pt-6 md:flex-row md:justify-between md:pt-8'>
-          <div>
-            <h2 className='text-2xl font-bold'>Subscribe to my newsletter</h2>
-            <p className='text-muted-foreground'>
+    <section data-oid='2ygi5ic'>
+      <Card className='rounded-lg border-0 dark:border' data-oid='3vvwqgn'>
+        <CardContent
+          className='flex flex-col gap-8 pt-6 md:flex-row md:justify-between md:pt-8'
+          data-oid='n0w3kk3'
+        >
+          <div data-oid='dcodw-t'>
+            <h2 className='text-2xl font-bold' data-oid='kij6q96'>
+              Subscribe to my newsletter
+            </h2>
+            <p className='text-muted-foreground' data-oid='daibajr'>
               Get updates on my work and projects.
             </p>
           </div>
@@ -53,8 +58,9 @@ export default function NewsletterForm() {
           <form
             onSubmit={handleSubmit(processForm)}
             className='flex flex-col items-start gap-3'
+            data-oid='qpi3_ub'
           >
-            <div className='w-full'>
+            <div className='w-full' data-oid='fo7r_pq'>
               <Input
                 type='email'
                 id='email'
@@ -62,29 +68,34 @@ export default function NewsletterForm() {
                 placeholder='Email'
                 className='w-full'
                 {...register('email')}
+                data-oid='tpb0sjc'
               />
 
               {errors.email?.message && (
-                <p className='ml-1 mt-2 text-sm text-rose-400'>
+                <p
+                  className='ml-1 mt-2 text-sm text-rose-400'
+                  data-oid='du819pd'
+                >
                   {errors.email.message}
                 </p>
               )}
             </div>
 
-            <div className='w-full'>
+            <div className='w-full' data-oid='a2:hswx'>
               <Button
                 type='submit'
                 disabled={isSubmitting}
                 className='w-full disabled:opacity-50'
+                data-oid='.k.5iuf'
               >
                 {isSubmitting ? 'Submitting...' : 'Subscribe'}
               </Button>
             </div>
 
-            <div>
-              <p className='text-xs text-muted-foreground'>
+            <div data-oid='od:_ni-'>
+              <p className='text-xs text-muted-foreground' data-oid='h70vrpu'>
                 We care about your data. Read our{' '}
-                <Link href='/privacy' className='font-bold'>
+                <Link href='/privacy' className='font-bold' data-oid='d0ct8yr'>
                   privacy&nbsp;policy.
                 </Link>
               </p>

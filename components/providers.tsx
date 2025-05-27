@@ -10,9 +10,10 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       attribute='class'
       defaultTheme='system'
       disableTransitionOnChange
+      data-oid='sobj_27'
     >
       {children}
-      <ToasterProvider />
+      <ToasterProvider data-oid=':2-5:pw' />
     </ThemeProvider>
   )
 }
@@ -24,6 +25,7 @@ function ToasterProvider() {
     <Toaster
       position='top-right'
       theme={resolvedTheme === 'dark' ? 'dark' : 'light'}
+      data-oid='zv_jxp3'
     />
   )
 }
