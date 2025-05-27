@@ -18,7 +18,7 @@ const offers = [
     title: 'Individual Mentoring Session',
     description:
       'Get personalized advice and support on service design, product strategy, or career growth.',
-    image: '/images/posts/post1.webp'
+    image: '/images/posts/generative-ai-roadmap.png'
   }
 ]
 
