@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import { getPosts } from '@/lib/posts'
+import { getFeaturedPosts } from '@/lib/posts'
 import Posts from '@/components/posts'
 
 export default async function RecentPosts() {
-  const posts = await getPosts(3) // Show only 3 most recent posts
+  const posts = await getFeaturedPosts() // Get featured posts including 'Beyond the MVP'
 
   return (
     <section className='pb-16'>
