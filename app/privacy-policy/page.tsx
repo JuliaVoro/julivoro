@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -52,7 +53,7 @@ export default function PrivacyPolicy() {
 
           <h2 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">3. Data Storage</h2>
           <p>
-            Messages submitted through the contact form and emails collected for the newsletter are handled via Resend, a third-party email platform. Your data may be temporarily stored on Resend's secure servers for processing and delivery.
+            Messages submitted through the contact form and emails collected for the newsletter are handled via Resend, a third-party email platform. Your data may be temporarily stored on Resend&apos;s secure servers for processing and delivery.
           </p>
           <p className="mt-4">
             I take reasonable steps to keep your data secure, but please note that no method of transmission over the internet is completely secure.
@@ -74,10 +75,9 @@ export default function PrivacyPolicy() {
           </p>
 
           <h2 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">6. Contact</h2>
-          <p>For any privacy-related questions, please contact:</p>
+          <p>For any privacy-related questions, please <Link href="/contact" className="text-primary hover:underline">contact me</Link> or email at: contact@juliavorobiova.com</p>
           <p className="mt-2">
-            Iuliia Vorobiova<br />
-            Email: contact@juliavorobiova.com
+            Iuliia Vorobiova
           </p>
         </div>
       </div>

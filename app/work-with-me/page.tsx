@@ -39,7 +39,7 @@ const offers = [
     title: 'Business Idea Validation Workshop',
     description:
       'Test and refine your business concept with expert guidance, user research, and actionable feedback. Includes rapid prototyping and market fit analysis.',
-    href: '#',
+    href: '/contact',
     icon: (
       <ClipboardIcon
         className='h-7 w-7 text-primary'
@@ -47,13 +47,13 @@ const offers = [
         data-oid='ft7asd2'
       />
     ),
-    cta: 'Book now'
+    cta: 'Contact'
   },
   {
     title: 'Individual Mentoring Session',
     description:
       'Get personalized advice and support on service design, product strategy, or career growth. Tailored to your unique needs and goals.',
-    href: '#',
+    href: '/contact',
     icon: (
       <PersonIcon
         className='h-7 w-7 text-primary'
@@ -61,7 +61,7 @@ const offers = [
         data-oid='0vzkc_:'
       />
     ),
-    cta: 'Book now'
+    cta: 'Contact'
   }
 ]
 
