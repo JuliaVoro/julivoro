@@ -18,6 +18,12 @@ const nextConfig = {
   // Enable trailing slashes for better compatibility
   trailingSlash: true,
   
+  // Base path for the application (empty for root domain)
+  basePath: '',
+  
+  // Asset prefix for static assets (empty for root domain)
+  assetPrefix: '',
+  
   // Output standalone for Vercel
   output: 'standalone',
   
