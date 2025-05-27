@@ -8,7 +8,11 @@ const nextConfig = {
     // Disable image optimization for static export
     unoptimized: true,
     // Add any external image domains here
-    domains: ['images.unsplash.com']
+    domains: ['images.unsplash.com'],
+    // Configure the path for static files
+    path: '/_next/static/media',
+    // Use the default loader
+    loader: 'default'
   },
   
   // Enable trailing slashes for better compatibility
@@ -33,15 +37,6 @@ const nextConfig = {
         fs: false,
       };
     }
-    
-    // Handle static files
-    config.module.rules.push({
-      test: /\.(png|jpe?g|gif|webp|svg)$/i,
-      type: 'asset/resource',
-      generator: {
-        filename: 'static/media/[name][ext]',
-      },
-    });
     
     return config;
   },
