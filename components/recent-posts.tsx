@@ -10,17 +10,14 @@ export default async function RecentPosts() {
       <div>
         <div className='mb-12 flex items-center justify-between'>
           <h2 className='title'>Recent thoughts</h2>
-          <Link
-            href='/posts'
-            className='text-sm font-medium text-muted-foreground underline-offset-4 hover:underline'
-          >
+          <Link href='/posts' className='underline'>
             View all
           </Link>
         </div>
         <Posts posts={posts} />
         <Link
           href='/posts'
-          className='mt-8 inline-block text-sm font-medium text-muted-foreground underline-offset-4 hover:underline'
+          className='mt-8 inline-block underline'
         >
           View all thoughts
         </Link>
