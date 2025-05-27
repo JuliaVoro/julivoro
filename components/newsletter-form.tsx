@@ -94,9 +94,8 @@ export default function NewsletterForm() {
 
             <div data-oid='od:_ni-'>
               <p className='text-xs text-muted-foreground' data-oid='h70vrpu'>
-                We care about your data. Read our{' '}
-                <Link href='/privacy' className='font-bold' data-oid='d0ct8yr'>
-                  privacy&nbsp;policy.
+                <Link href='/privacy-policy' className='font-bold' data-oid='d0ct8yr'>
+                  Read privacy policy
                 </Link>
               </p>
             </div>
