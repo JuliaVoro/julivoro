@@ -1,14 +1,42 @@
 'use client'
 import { useState, useRef, useEffect } from 'react'
 
-export default function ChatWidget() {
+// Check if chat widget should be shown
+const ChatWidget = () => {
+  // Hide chat widget if SHOW_CHAT_WIDGET is not 'true'
+  if (process.env.NEXT_PUBLIC_SHOW_CHAT_WIDGET !== 'true') {
+    return null;
+  }
+  
+  return <ChatWidgetContent />;
+};
+
+const ChatWidgetContent = () => {
   const [open, setOpen] = useState(false)
-  const [messages, setMessages] = useState([
-    {
-      from: 'bot',
-      text: 'Hi 👋, it’s my digital copy! You can ask me any question about my work, experience, or projects. I’m here to help you learn more about what I do! 😊'
+  const [messages, setMessages] = useState<Array<{from: string, text: string}>>([])
+  
+  // Load messages from localStorage on component mount
+  useEffect(() => {
+    const savedMessages = typeof window !== 'undefined' ? localStorage.getItem('chatMessages') : null
+    if (savedMessages) {
+      setMessages(JSON.parse(savedMessages))
+    } else {
+      // Default welcome message if no history exists
+      setMessages([
+        {
+          from: 'bot',
+          text: 'Hi 👋, it\'s my digital copy! You can ask me any question about my work, experience, or projects. I\'m here to help you learn more about what I do! 😊'
+        }
+      ])
     }
-  ])
+  }, [])
+  
+  // Save messages to localStorage whenever they change
+  useEffect(() => {
+    if (messages.length > 0) {
+      localStorage.setItem('chatMessages', JSON.stringify(messages))
+    }
+  }, [messages])
   const [input, setInput] = useState('')
   const bottomRef = useRef<HTMLDivElement | null>(null)
 
@@ -22,23 +50,25 @@ export default function ChatWidget() {
     e.preventDefault()
     if (!input.trim()) return
     const userMessage = { from: 'user', text: input }
-    setMessages(msgs => [...msgs, userMessage])
+    const updatedMessages = [...messages, userMessage]
+    setMessages(updatedMessages)
     setInput('')
-    // Call your OpenAI backend API
+    // Add loading message
     setMessages(msgs => [...msgs, { from: 'bot', text: '...' }])
+    
+    // Prepare chat history for the API
+    const chatHistory = [
+      {
+        role: 'system',
+        content:
+          'You are Julia, a digital copy of Iuliia Vorobiova, a service designer and product strategist. Respond as Julia.'
+      },
+      ...updatedMessages.map(m => ({
+        role: m.from === 'user' ? 'user' : 'assistant',
+        content: m.text
+      }))
+    ]
     try {
-      const chatHistory = [
-        {
-          role: 'system',
-          content:
-            'You are Julia, a digital copy of Iuliia Vorobiova, a service designer and product strategist. Respond as Julia.'
-        },
-        ...[...messages, userMessage].map(m => ({
-          role: m.from === 'user' ? 'user' : 'assistant',
-          content: m.text
-        }))
-      ]
-
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -53,6 +83,19 @@ export default function ChatWidget() {
       setMessages(msgs => [
         ...msgs.slice(0, -1),
         { from: 'bot', text: 'Sorry, there was an error connecting to Julia.' }
+      ])
+    }
+  }
+
+  // Clear chat history
+  const clearChat = () => {
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('chatMessages')
+      setMessages([
+        {
+          from: 'bot',
+          text: 'Hi again! How can I help you today? 😊'
+        }
       ])
     }
   }
@@ -90,7 +133,7 @@ export default function ChatWidget() {
             className='p-4 border-b border-black bg-white flex items-center justify-between'
             data-oid='rr7jks:'
           >
-            <span className='flex items-center gap-2' data-oid='z-78n:z'>
+            <div className='flex items-center gap-2' data-oid='z-78n:z'>
               <span
                 className='relative block w-12 h-12 rounded-full bg-white overflow-hidden flex items-center justify-center'
                 data-oid='idn.p81'
@@ -102,13 +145,21 @@ export default function ChatWidget() {
                   data-oid='vm58ftf'
                 />
               </span>
-              <span
-                className='font-serif text-lg font-bold text-black tracking-tight'
-                data-oid='2ard4x8'
-              >
-                Julia
-              </span>
-            </span>
+              <div>
+                <span
+                  className='font-serif text-lg font-bold text-black tracking-tight block'
+                  data-oid='2ard4x8'
+                >
+                  Julia
+                </span>
+                <button 
+                  onClick={clearChat}
+                  className='text-xs text-zinc-500 hover:text-red-500 transition-colors mt-1'
+                >
+                  Clear chat
+                </button>
+              </div>
+            </div>
             <button
               aria-label='Close chat'
               className='text-black hover:text-zinc-700 p-1 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-400 transition'
@@ -185,3 +236,5 @@ export default function ChatWidget() {
     </>
   )
 }
+
+export default ChatWidget;

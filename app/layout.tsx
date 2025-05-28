@@ -5,7 +5,8 @@ import './globals.css'
 import Providers from '@/components/providers'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-import ChatWidget from '@/components/ChatWidget'
+// Temporarily hiding chat widget
+// import ChatWidget from '@/components/ChatWidget'
 
 // Optimize font loading
 const inter = Inter({
@@ -93,7 +94,9 @@ export default function RootLayout({
             {children}
           </main>
           <Footer data-oid='3bwdm._' />
+          {/* Temporarily hiding chat widget
           <ChatWidget data-oid='h9m7kwt' />
+          */}
         </Providers>
       </body>
     </html>
