@@ -1,5 +1,9 @@
-import Link from 'next/link'
-import { ThemeToggle } from './theme-toggle'
+'use client';
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
+import { ThemeToggle } from './theme-toggle';
 
 export default function Header() {
   return (
@@ -25,20 +29,28 @@ export default function Header() {
           className='flex items-center gap-6 text-sm font-light text-muted-foreground sm:gap-10'
           data-oid='04k7s0z'
         >
-          <li
-            className='transition-colors hover:text-foreground'
-            data-oid='xq397kg'
-          >
-            <Link href='/posts' data-oid='9hvg-mk'>
+          <li data-oid='xq397kg'>
+            <Link 
+              href='/posts' 
+              className={cn(
+                'transition-colors hover:text-foreground',
+                usePathname()?.startsWith('/posts') && 'text-foreground font-medium'
+              )}
+              data-oid='9hvg-mk'
+            >
               Thoughts
             </Link>
           </li>
 
-          <li
-            className='transition-colors hover:text-foreground'
-            data-oid='z_as0mf'
-          >
-            <Link href='/work-with-me' data-oid='e5.h3ws'>
+          <li data-oid='z_as0mf'>
+            <Link 
+              href='/work-with-me' 
+              className={cn(
+                'transition-colors hover:text-foreground',
+                usePathname()?.startsWith('/work-with-me') && 'text-foreground font-medium'
+              )}
+              data-oid='e5.h3ws'
+            >
               Work With Me
             </Link>
           </li>

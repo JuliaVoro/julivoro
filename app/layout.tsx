@@ -32,6 +32,55 @@ export const metadata: Metadata = {
   description:
     'Turning early-stage ideas into real solutions that are grounded in user needs, built to scale, and aligned with business goals.',
   metadataBase: new URL('https://juliavorobiova.com'),
+  
+  // Icons configuration
+  icons: {
+    icon: [
+      // SVG version (modern browsers)
+      { url: '/images/favicon.svg', type: 'image/svg+xml' },
+      // Standard favicon
+      { url: '/favicon.ico', type: 'image/x-icon', sizes: 'any' },
+      // PNG versions for different resolutions
+      { url: '/images/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/images/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [
+      // Apple touch icons
+      { url: '/images/apple-touch-icon.png' },
+      { url: '/images/apple-touch-icon-152x152.png', sizes: '152x152', type: 'image/png' },
+      { url: '/images/apple-touch-icon-180x180.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      // Safari pinned tab
+      {
+        rel: 'mask-icon',
+        url: '/images/safari-pinned-tab.svg',
+        color: '#000000',
+      },
+    ],
+  },
+  
+  // Web app manifest
+  manifest: '/site.webmanifest',
+  
+  // Additional metadata
+  applicationName: 'Julia Vorobiova',
+  authors: [{ name: 'Julia Vorobiova', url: 'https://juliavorobiova.com' }],
+  creator: 'Julia Vorobiova',
+  publisher: 'Julia Vorobiova',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  other: {
+    'msapplication-TileColor': '#ffffff',
+    'msapplication-config': '/browserconfig.xml',
+    'msapplication-TileImage': '/images/mstile-144x144.png',
+    'theme-color': '#ffffff',
+  },
+  
+  // Open Graph configuration
   openGraph: {
     title: 'Julia Vorobiova | Service Designer',
     description:
