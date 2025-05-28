@@ -26,20 +26,34 @@ const playfair = Playfair_Display({
 // Metadata configuration
 export const metadata: Metadata = {
   title: {
-    default: 'Julia Vorobiova | Service Design & Strategy',
+    default: 'Julia Vorobiova | Service Designer',
     template: '%s | Julia Vorobiova'
   },
   description:
-    'Service design strategist helping businesses create meaningful digital experiences',
+    'Turning early-stage ideas into real solutions that are grounded in user needs, built to scale, and aligned with business goals.',
   metadataBase: new URL('https://juliavorobiova.com'),
   openGraph: {
-    title: 'Julia Vorobiova | Service Design & Strategy',
+    title: 'Julia Vorobiova | Service Designer',
     description:
-      'Service design strategist helping businesses create meaningful digital experiences',
+      'Turning early-stage ideas into real solutions that are grounded in user needs, built to scale, and aligned with business goals.',
     url: 'https://juliavorobiova.com',
     siteName: 'Julia Vorobiova',
     locale: 'en_US',
-    type: 'website'
+    type: 'website',
+    images: [
+      {
+        url: '/images/preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'Julia Vorobiova - Service Designer',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Julia Vorobiova | Service Designer',
+    description: 'Turning early-stage ideas into real solutions that are grounded in user needs, built to scale, and aligned with business goals.',
+    images: ['/images/preview.png'],
   },
   robots: {
     index: true,
@@ -51,10 +65,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1
     }
-  },
-  twitter: {
-    title: 'Julia Vorobiova',
-    card: 'summary_large_image'
   },
   verification: {
     // Add your verification tokens here
