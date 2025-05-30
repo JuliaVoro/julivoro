@@ -22,7 +22,7 @@ export default function Intro() {
           Helping Ideas Survive Reality
         </h1>
         <p className='mt-3 font-light text-muted-foreground' data-oid='h2jez7f'>
-          I design strategic, testable services and digital products—turning
+          I design strategic, testable services and digital products, turning
           early-stage ideas into real solutions that are grounded in user needs,
           built to scale, and aligned with business goals. With a background in
           engineering and design, I work where clarity meets complexity.
