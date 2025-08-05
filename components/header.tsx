@@ -25,39 +25,37 @@ export default function Header() {
           </Link>
         </div>
 
-        <ul
-          className='flex items-center gap-6 text-sm font-light text-muted-foreground sm:gap-10'
-          data-oid='04k7s0z'
-        >
-          <li data-oid='xq397kg'>
-            <Link 
-              href='/posts' 
-              className={cn(
-                'transition-colors hover:text-foreground',
-                usePathname()?.startsWith('/posts') && 'text-foreground font-medium'
-              )}
-              data-oid='9hvg-mk'
+        <div className='flex items-center gap-6 justify-end'>
+          <div data-oid='portfolio-link'>
+            <a
+              href='https://www.figma.com/slides/HvORSn5ujeOScardCpDglB/Portfolio?node-id=1-96&t=xYpXIH4zaAdhbRyV-1'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='flex items-center gap-1 text-sm font-light text-muted-foreground transition-colors hover:text-foreground'
             >
-              Thoughts
-            </Link>
-          </li>
-
-          <li data-oid='z_as0mf'>
-            <Link 
-              href='/work-with-me' 
-              className={cn(
-                'transition-colors hover:text-foreground',
-                usePathname()?.startsWith('/work-with-me') && 'text-foreground font-medium'
-              )}
-              data-oid='e5.h3ws'
-            >
-              Work With Me
-            </Link>
-          </li>
-        </ul>
-
-        <div data-oid='ifkyn6y'>
-          <ThemeToggle data-oid='1b.s46q' />
+              Portfolio
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='16'
+                height='16'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                strokeWidth='2'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                className='h-3.5 w-3.5'
+              >
+                <path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'></path>
+                <polyline points='15 3 21 3 21 9'></polyline>
+                <line x1='10' y1='14' x2='21' y2='3'></line>
+              </svg>
+            </a>
+          </div>
+          
+          <div data-oid='ifkyn6y'>
+            <ThemeToggle data-oid='1b.s46q' />
+          </div>
         </div>
       </nav>
     </header>

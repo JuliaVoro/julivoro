@@ -13,13 +13,15 @@ export default async function RecentPosts() {
         </h2>
         <Posts posts={posts} data-oid='7f.vi-f' />
 
-        <Link
-          href='/posts'
-          className='mt-8 inline-block text-sm underline underline-offset-4 transition-colors hover:text-foreground'
-          data-oid='9:jo_at'
-        >
-          View all thoughts
-        </Link>
+        {posts.length > 3 && (
+          <Link
+            href='/posts'
+            className='mt-8 inline-block text-sm underline underline-offset-4 transition-colors hover:text-foreground'
+            data-oid='9:jo_at'
+          >
+            View all thoughts
+          </Link>
+        )}
       </div>
     </section>
   )

@@ -16,6 +16,10 @@ export type ProjectMetadata = {
   author?: string
   publishedAt?: string
   slug: string
+  cta?: {
+    label: string
+    url: string
+  }
 }
 
 export async function getProjectBySlug(slug: string): Promise<Project | null> {
