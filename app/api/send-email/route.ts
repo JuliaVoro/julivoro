@@ -3,7 +3,7 @@ import { ContactFormSchema } from '@/lib/schemas';
 import { Resend } from 'resend';
 import ContactFormEmail from '@/emails/contact-form-email';
 
-const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
   try {
@@ -13,11 +13,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: result.error.format() }, { status: 400 });
     }
     const { name, email, message } = result.data;
-    
-    if (!resend) {
-      return NextResponse.json({ error: 'Email service not configured' }, { status: 500 });
-    }
-    
     const { data, error } = await resend.emails.send({
       from: 'contact@juliavorobiova.com',
       to: ['contact@juliavorobiova.com'],
