@@ -28,7 +28,7 @@ export default function Header() {
         <div className='flex items-center gap-6 justify-end'>
           <div data-oid='portfolio-link'>
             <a
-              href='https://www.figma.com/slides/HvORSn5ujeOScardCpDglB/Portfolio?node-id=1-96&t=xYpXIH4zaAdhbRyV-1'
+              href='https://drive.google.com/file/d/1Jq5D256Kbmh_rQSuXSJZRzSq6fZhfCJT/view?usp=sharing'
               target='_blank'
               rel='noopener noreferrer'
               className='flex items-center gap-1 text-sm font-light text-muted-foreground transition-colors hover:text-foreground'
